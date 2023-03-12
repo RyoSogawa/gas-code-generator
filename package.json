@@ -5,8 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "cd src/client && vite --port 3001",
-    "build:client": "tsc && cd src/client && vite build",
-    "preview": "cd src/client && vite preview"
+    "build:client": "tsc && cd src/client && vite build --emptyOutDir",
+    "build:server": "node server-build.cjs",
+    "build": "yarn build:client && yarn build:server",
+    "preview": "cd src/client && vite preview",
+    "push": "yarn build && cp appsscript.json dist && clasp push",
+    "deploy": "clasp deploy"
   },
   "dependencies": {
     "@google/clasp": "^2.4.2",
@@ -19,6 +23,8 @@
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "@vitejs/plugin-react": "^3.1.0",
+    "esbuild": "^0.17.11",
+    "esbuild-gas-plugin": "^0.5.0",
     "typescript": "^4.9.3",
     "vite": "^4.1.0"
   }
