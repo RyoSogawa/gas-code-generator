@@ -18,4 +18,4 @@
 - Automatic generate classes(entities, repositories etc...) from schema file
 - Data fetch client library
 - Authentication
-
+- Local development
