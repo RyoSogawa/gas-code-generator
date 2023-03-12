@@ -4,9 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
+    "dev": "cd src/client && vite --port 3001",
+    "build:client": "tsc && cd src/client && vite build",
+    "preview": "cd src/client && vite preview"
   },
   "dependencies": {
     "@google/clasp": "^2.4.2",
