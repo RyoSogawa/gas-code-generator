@@ -19,3 +19,6 @@
 - Data fetch client library
 - Authentication
 - Local development
+
+## References
+- https://github.com/wadakenji/self-monitoring
