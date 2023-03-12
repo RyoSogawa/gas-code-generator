@@ -3,7 +3,7 @@
 ## Features
 - Hosting a React app on Google Apps Script.
 - Using Spreadsheet as a database.
-- Instead of REST API, using Google Apps Script as a backend directly.
+- Instead of REST API, using Google Apps Script as a backend. 
 
 ## Dependencies
 - react
@@ -13,3 +13,9 @@
   - vite-plugin-singlefile
 - esbuild
   - esbuild-gas-plugin
+
+## TODO
+- Automatic generate classes(entities, repositories etc...) from schema file
+- Data fetch client library
+- Authentication
+
