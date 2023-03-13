@@ -16,9 +16,10 @@
 
 ## TODO
 - Automatic generate classes(entities, repositories etc...) from schema file
-- Data fetch client library
+- Data fetching state management client library
 - Authentication
 - Local development
+- Static file hosting
 
 ## References
 - https://github.com/wadakenji/self-monitoring
