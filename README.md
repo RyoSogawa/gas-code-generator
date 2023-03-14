@@ -18,7 +18,9 @@
 - Automatic generate classes(entities, repositories etc...) from schema file
 - Data fetching state management client library
 - Authentication
-- Local development
+- Local development with InMemoryDB
+- Testing with InMemoryDB
+- CI/CD
 - Static file hosting
 
 ## References
