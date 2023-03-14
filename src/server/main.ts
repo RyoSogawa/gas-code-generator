@@ -1,8 +1,8 @@
 // TODO: auto-generate this file
-import { appendRowsToSheet } from './handlers/appendRowsToSheet';
-import { doGet } from './handlers/doGet';
-import { findBook } from './handlers/findBook';
-import { getSheetData } from './handlers/getSheetData';
+import { appendRowsToSheet } from '@/server/handlers/appendRowsToSheet';
+import { doGet } from '@/server/handlers/doGet';
+import { findBook } from '@/server/handlers/findBook';
+import { getSheetData } from '@/server/handlers/getSheetData';
 
 export { getSheetData };
 export { appendRowsToSheet };

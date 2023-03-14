@@ -1,4 +1,4 @@
-import { Book } from '../entity/book.entity';
+import { Book } from '@/server/__generated__/entity/book.entity';
 
 export class BookRepository {
   static findById(id: string): Book | null {
