@@ -1,10 +1,12 @@
 import { useState } from 'react'
+import { Book } from '../server/__generated__/entity/book.entity';
 import reactLogo from './assets/react.svg'
 import './App.css'
 import {serverFunctions} from './lib/gas-client';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [bookId, setBookId] = useState('');
+  const [book, setBook] = useState<Book | null>(null);
 
   return (
     <div className="App">
@@ -19,11 +21,15 @@ function App() {
       <h1>Vite + React</h1>
       <div className="card">
         <button onClick={() => serverFunctions.getSheetData().then(d => console.log(d))}>
-          count is {count}
+          getSheetData
         </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+      </div>
+      <div className="card">
+        <input value={bookId} onChange={(e) => setBookId(e.target.value)}  />
+        <button onClick={() => serverFunctions.findBook(bookId).then(d => setBook(d))}>
+          findBook
+        </button>
+        <pre>{JSON.stringify(book)}</pre>
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
