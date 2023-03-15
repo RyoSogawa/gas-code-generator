@@ -7,7 +7,7 @@ export class BookSheetRepository implements IBookRepository {
     if (!sheet) return [];
     const lastRow = sheet.getLastRow();
     const lastColumn = sheet.getLastColumn();
-    const allBooks = sheet.getRange(2, 1, lastRow - 1, lastColumn - 1).getValues();
+    const allBooks = sheet.getRange(2, 1, lastRow - 1, lastColumn).getValues();
     return allBooks.map((book, index) => new Book(
       index,
       // @ts-ignore
