@@ -9,6 +9,6 @@ container.register('IBookRepository', {
 
 const bookService = container.resolve(BookService);
 
-export function findBook(id: string): Book | null {
-  return bookService.findById(id);
+export function findBooks(): Book[] {
+  return bookService.findAll();
 }
