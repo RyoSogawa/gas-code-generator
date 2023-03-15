@@ -1,4 +1,6 @@
 // TODO: auto-generate this file
+import "reflect-metadata";
+
 import { appendRowsToSheet } from '@/server/handlers/appendRowsToSheet';
 import { doGet } from '@/server/handlers/doGet';
 import { findBook } from '@/server/handlers/findBook';
