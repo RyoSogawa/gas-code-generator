@@ -1,7 +1,7 @@
-import { Book } from '@/server/__generated__/entity/book.entity';
-import { IBookRepository } from '@/server/__generated__/repository/book.repository';
+import { Book } from '@/server/__generated__/domain/entity/book.entity';
+import { IBookRepository } from '@/server/__generated__/domain/repository/book.repository';
 
-export class BookSheetRepository implements IBookRepository {
+export class BookRepository implements IBookRepository {
   public findAll(): Book[] {
     const sheet = SpreadsheetApp.getActive().getSheetByName('Book');
     if (!sheet) return [];

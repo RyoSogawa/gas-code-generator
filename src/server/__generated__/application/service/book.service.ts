@@ -1,5 +1,5 @@
-import { Book } from '@/server/__generated__/entity/book.entity';
-import type { IBookRepository } from '@/server/__generated__/repository/book.repository';
+import { Book } from '@/server/__generated__/domain/entity/book.entity';
+import type { IBookRepository } from '@/server/__generated__/domain/repository/book.repository';
 import { inject, injectable } from 'tsyringe';
 
 @injectable()
