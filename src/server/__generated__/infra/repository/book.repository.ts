@@ -19,10 +19,11 @@ export class BookRepository implements IBookRepository {
     const sheet = SpreadsheetApp.getActive().getSheetByName('Book');
     if (!sheet) return null;
     const lastRow = sheet.getLastRow();
-    const allIds = sheet.getRange(2, 1, lastRow - 1, 1).getValues();
-    const index = allIds.findIndex(value => value[0] === id);
+    const lastColumn = sheet.getLastColumn();
+    const allBooks = sheet.getRange(2, 1, lastRow - 1, lastColumn).getValues();
+    const index = allBooks.findIndex(value => value[0] === id);
     if (index === -1) return null;
-    const book = allIds[index];
+    const book = allBooks[index];
 
     return new Book(
       index,
