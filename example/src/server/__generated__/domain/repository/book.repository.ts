@@ -1,4 +1,4 @@
-import { Book } from '@/server/__generated__/domain/entity/book.entity';
+import { Book } from '@/models/__generated__/domain/entity/book.entity';
 
 export interface IBookRepository {
   findAll(): Book[];

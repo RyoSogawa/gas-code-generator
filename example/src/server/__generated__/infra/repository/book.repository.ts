@@ -1,4 +1,4 @@
-import { Book } from '@/server/__generated__/domain/entity/book.entity';
+import { Book } from '@/models/__generated__/domain/entity/book.entity';
 import { IBookRepository } from '@/server/__generated__/domain/repository/book.repository';
 
 export class BookRepository implements IBookRepository {
