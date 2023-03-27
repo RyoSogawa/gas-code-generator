@@ -9,4 +9,4 @@ export function getSheetData(): SheetData {
     name: sheet.getName(),
     numOfRows: sheet.getMaxRows(),
   };
-};
+}

@@ -1,4 +1,4 @@
-import { Schema } from './type';
+import type { Schema } from './type';
 
 export const Book: Schema = {
   sheetName: 'Book',
@@ -24,6 +24,6 @@ export const Book: Schema = {
       type: 'boolean',
       required: false,
       default: false,
-    }
+    },
   ],
 };

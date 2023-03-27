@@ -5,6 +5,5 @@ export class Book {
     public readonly title: string,
     public readonly publishedAt?: number,
     public readonly soldOut?: boolean,
-  ) {
-  }
+  ) {}
 }

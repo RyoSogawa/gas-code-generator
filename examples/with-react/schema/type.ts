@@ -5,10 +5,10 @@ export type Property = {
   type: Type;
   required?: boolean;
   default?: any;
-}
+};
 
 export type Schema = {
   sheetName?: string;
   headerRowNum?: number;
   properties: Property[];
-}
+};
