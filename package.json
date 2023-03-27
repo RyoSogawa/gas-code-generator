@@ -1,0 +1,12 @@
+{
+  "name": "gas-code-generator",
+  "version": "0.1.0",
+  "repository": "git@github.com:RyoSogawa/gas-code-generator.git",
+  "author": "RyoSogawa <ryo.sogawa.909@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "examples/*",
+    "packages/*"
+  ]
+}
