@@ -49,6 +49,7 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/space-before-blocks': 'off',
+    'arrow-body-style': 'off',
     'class-methods-use-this': 'off',
     'object-shorthand': ['error', 'properties'],
     'no-console': [
