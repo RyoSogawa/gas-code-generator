@@ -1,0 +1,7 @@
+{
+  "name": "@gas-code-generator/utils",
+  "version": "0.1.0",
+  "main": "dist/gas-code-generator-utils.cjs.js",
+  "module": "dist/gas-code-generator-utils.esm.js",
+  "license": "MIT"
+}

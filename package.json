@@ -9,12 +9,21 @@
     "examples/*",
     "packages/*"
   ],
+  "preconstruct": {
+    "packages": [
+      "packages/*"
+    ]
+  },
   "scripts": {
     "lint": "eslint \"**/*.{ts,tsx}\"",
     "prettier": "prettier \"**/*.{ts,tsx}\"",
-    "format": "yarn lint --fix && yarn prettier --write"
+    "format": "yarn lint --fix && yarn prettier --write",
+    "build": "preconstruct build",
+    "watch": "preconstruct watch"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.20.2",
+    "@preconstruct/cli": "^2.4.1",
     "@typescript-eslint/eslint-plugin": "^5.56.0",
     "@typescript-eslint/parser": "^5.56.0",
     "eslint": "^8.36.0",
