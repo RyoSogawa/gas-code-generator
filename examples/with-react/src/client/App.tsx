@@ -33,7 +33,7 @@ function App() {
         <input value={bookId} onChange={(e) => setBookId(e.target.value)} />
         <button
           type="button"
-          onClick={() => serverFunctions.findBook(bookId).then((d) => setBook(d))}
+          onClick={() => serverFunctions.findBookById(bookId).then((d) => setBook(d))}
         >
           findBook
         </button>
