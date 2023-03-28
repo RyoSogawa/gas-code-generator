@@ -4,7 +4,7 @@ import reactLogo from './assets/react.svg';
 import './App.css';
 import { serverFunctions } from './lib/gas-client';
 
-import type { Book } from '@/models/__generated__/domain/entity/book.entity';
+import type { Book } from '@/models/__generated__/book.entity';
 
 function App() {
   const [bookId, setBookId] = useState('');

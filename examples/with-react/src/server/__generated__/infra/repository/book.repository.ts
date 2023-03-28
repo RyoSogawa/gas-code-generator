@@ -2,7 +2,7 @@ import { convertArrayToJsonCompatible } from '@gas-code-generator/utils';
 
 import type { IBookRepository } from '@/server/__generated__/domain/repository/book.repository';
 
-import { Book } from '@/models/__generated__/domain/entity/book.entity';
+import { Book } from '@/models/__generated__/book.entity';
 
 export class BookRepository implements IBookRepository {
   public findAll(): Book[] {
