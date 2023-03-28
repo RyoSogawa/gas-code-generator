@@ -21,6 +21,7 @@
     "prettier": "prettier \"**/*.{ts,tsx}\"",
     "format": "yarn lint --fix && yarn prettier --write",
     "test": "jest",
+    "test:watch": "jest --watch",
     "build": "preconstruct build",
     "watch": "preconstruct watch"
   },
