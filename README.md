@@ -12,6 +12,7 @@ Automatically generate code to build a backend with Google Apps Script using a s
 - [ ] CI/CD
 - [ ] Static file hosting
 - [ ] Authentication
+- [ ] Chrome Extension To Remove Warning Message
 
 ## Dependencies
 - clasp
