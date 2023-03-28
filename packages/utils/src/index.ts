@@ -1,3 +1,1 @@
-export default function test() {
-  return true;
-}
+export { convertArrayToJsonCompatible } from './convertArrayToJsonCompatible';
