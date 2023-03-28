@@ -1,5 +1,6 @@
 {
   "name": "gas-code-generator",
+  "description": "Automatically generate code to build a backend with Google Apps Script using a spreadsheet as a database.",
   "version": "0.1.0",
   "repository": "git@github.com:RyoSogawa/gas-code-generator.git",
   "author": "RyoSogawa <ryo.sogawa.909@gmail.com>",
