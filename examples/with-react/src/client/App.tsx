@@ -4,11 +4,11 @@ import reactLogo from './assets/react.svg';
 import './App.css';
 import { serverFunctions } from './lib/gas-client';
 
-import type { Book } from '@/models/__generated__/book.entity';
+import type { SerializedBook } from '@/models/book.entity';
 
 function App() {
   const [bookId, setBookId] = useState('');
-  const [book, setBook] = useState<Book | null>(null);
+  const [book, setBook] = useState<SerializedBook | null>(null);
 
   return (
     <div className="App">

@@ -2,7 +2,7 @@ import { convertArrayToJsonCompatible } from '@gas-code-generator/utils';
 
 import type { IBookRepository } from '@/server/__generated__/domain/repository/book.repository';
 
-import { Book } from '@/models/__generated__/book.entity';
+import { Book } from '@/models/book.entity';
 
 export class BookRepository implements IBookRepository {
   public findAll(): Book[] {
@@ -13,12 +13,12 @@ export class BookRepository implements IBookRepository {
     const allBooks = sheet.getRange(2, 1, lastRow - 1, lastColumn).getValues();
     return allBooks.map((book, index) => {
       const [id, ...fields] = convertArrayToJsonCompatible(book);
-      return new Book(
-        index,
-        String(id),
-        // @ts-ignore
-        ...fields,
-      );
+      return new Book(index, {
+        id: String(id),
+        title: fields[0],
+        publishedAt: fields[1],
+        soldOut: fields[2],
+      });
     });
   }
 
@@ -33,12 +33,12 @@ export class BookRepository implements IBookRepository {
     const book = allBooks[index];
     const [, ...fields] = convertArrayToJsonCompatible(book);
 
-    return new Book(
-      index,
+    return new Book(index, {
       id,
-      // @ts-ignore
-      ...fields,
-    );
+      title: fields[0],
+      publishedAt: fields[1],
+      soldOut: fields[2],
+    });
   }
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
