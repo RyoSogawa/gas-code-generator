@@ -10,12 +10,7 @@ export class BookRepository implements IBookRepository {
     const lastColumn = sheet.getLastColumn();
     const allBooks = sheet.getRange(2, 1, lastRow - 1, lastColumn).getValues();
     return allBooks.map((book, index) => {
-      return new Book(index, {
-        id: String(book[0]),
-        title: book[1],
-        publishedAt: book[2],
-        soldOut: book[3],
-      });
+      return Book.deserialize(index, book);
     });
   }
 
@@ -28,13 +23,7 @@ export class BookRepository implements IBookRepository {
     const index = allBooks.findIndex((value) => String(value[0]) === id);
     if (index === -1) return null;
     const book = allBooks[index];
-
-    return new Book(index, {
-      id,
-      title: book[1],
-      publishedAt: book[2],
-      soldOut: book[3],
-    });
+    return Book.deserialize(index, book);
   }
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
