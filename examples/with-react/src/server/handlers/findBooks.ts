@@ -2,9 +2,9 @@ import { container } from 'tsyringe';
 
 import type { SerializedBook } from '@/models/book.entity';
 
-import { BookService } from '@/server/__generated__/application/service/book.service';
+import { GetAllBooksUsecase } from '@/server/application/usecases/GetAllBooks.usecase';
 
 export function findBooks(): SerializedBook[] {
-  const books = container.resolve(BookService).findAll();
+  const books = container.resolve(GetAllBooksUsecase).invoke();
   return books.map((book) => book.serialize());
 }
