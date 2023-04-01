@@ -1,7 +1,7 @@
 import type { Book } from '@/models/book.entity';
 
 export interface IBookRepository {
-  findAll(): Book[];
+  getAll(): Book[];
   findById(id: string): Book | null;
   save(book: Book): Book;
   delete(id: string): void;

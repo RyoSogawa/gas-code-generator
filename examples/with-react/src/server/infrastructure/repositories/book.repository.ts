@@ -1,9 +1,9 @@
-import type { IBookRepository } from '@/server/__generated__/domain/repository/book.repository';
+import type { IBookRepository } from '@/server/__generated__//book.repository';
 
 import { Book } from '@/models/book.entity';
 
 export class BookRepository implements IBookRepository {
-  public findAll(): Book[] {
+  public getAll(): Book[] {
     const sheet = SpreadsheetApp.getActive().getSheetByName('Book');
     if (!sheet) return [];
     const lastRow = sheet.getLastRow();

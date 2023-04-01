@@ -1,7 +1,7 @@
 import { inject, injectable } from 'tsyringe';
 
 import type { Book } from '@/models/book.entity';
-import type { IBookRepository } from '@/server/__generated__/domain/repository/book.repository';
+import type { IBookRepository } from '@/server/__generated__/book.repository';
 
 @injectable()
 export class GetAllBooksUsecase {
@@ -11,6 +11,6 @@ export class GetAllBooksUsecase {
   ) {}
 
   public invoke(): Book[] {
-    return this.bookRepository.findAll();
+    return this.bookRepository.getAll();
   }
 }
