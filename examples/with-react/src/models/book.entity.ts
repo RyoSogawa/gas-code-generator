@@ -1,9 +1,11 @@
-import type { IBook } from '@/models/__generated__/book.entity';
+import type {
+  IBook,
+  SerializedBook as BaseSerializedBook,
+} from '@/models/__generated__/book.entity';
 
-import { BaseBook } from '@/models/__generated__/book.entity';
+import { Book as BaseBook } from '@/models/__generated__/book.entity';
 
-export type SerializedBook = Omit<IBook, 'publishedAt'> & {
-  publishedAt?: string;
+export type SerializedBook = BaseSerializedBook & {
   isOnSale: boolean;
 };
 
@@ -22,8 +24,7 @@ export class Book extends BaseBook {
 
   public serialize(): SerializedBook {
     return {
-      ...this.data,
-      publishedAt: this.data.publishedAt?.toISOString(),
+      ...super.serialize(),
       isOnSale: this.isOnSale,
     };
   }

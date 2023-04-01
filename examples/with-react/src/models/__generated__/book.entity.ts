@@ -9,7 +9,11 @@ export const bookSchema = z.object({
 
 export type IBook = z.infer<typeof bookSchema>;
 
-export class BaseBook {
+export type SerializedBook = Omit<IBook, 'publishedAt'> & {
+  publishedAt?: string;
+};
+
+export class Book {
   constructor(public readonly rowNumber: number, public readonly data: IBook) {}
 
   public static parseFromArray(data: unknown[]): IBook {
@@ -21,7 +25,14 @@ export class BaseBook {
     });
   }
 
-  public static deserialize(rowNumber: number, data: unknown[]): BaseBook {
-    return new BaseBook(rowNumber, this.parseFromArray(data));
+  public static deserialize(rowNumber: number, data: unknown[]): Book {
+    return new Book(rowNumber, this.parseFromArray(data));
+  }
+
+  public serialize(): SerializedBook {
+    return {
+      ...this.data,
+      publishedAt: this.data.publishedAt?.toISOString(),
+    };
   }
 }
