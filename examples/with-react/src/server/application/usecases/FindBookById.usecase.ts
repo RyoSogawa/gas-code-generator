@@ -1,7 +1,7 @@
 import { inject, injectable } from 'tsyringe';
 
 import type { Book } from '@/models/book.entity';
-import type { IBookRepository } from '@/server/__generated__/domain/repository/book.repository';
+import type { IBookRepository } from '@/server/__generated__/book.repository';
 
 @injectable()
 export class FindBookByIdUsecase {
