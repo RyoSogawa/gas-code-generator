@@ -2,7 +2,7 @@ export type Type = 'ID' | 'string' | 'number' | 'boolean' | 'date';
 
 export type Property = {
   key: string;
-  type: Type;
+  type: Type | Schema;
   required?: boolean;
   default?: any;
 };

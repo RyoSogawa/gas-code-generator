@@ -1,3 +1,5 @@
+import { Author } from './Author';
+
 import type { Schema } from './type';
 
 export const Book: Schema = {
@@ -24,6 +26,11 @@ export const Book: Schema = {
       type: 'boolean',
       required: false,
       default: false,
+    },
+    {
+      key: 'author',
+      type: Author,
+      required: true,
     },
   ],
 };
