@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+
+import { Virtuoso } from 'react-virtuoso';
 
 import reactLogo from './assets/react.svg';
 import './App.css';
@@ -9,6 +11,18 @@ import type { SerializedBook } from '@/models/book.entity';
 function App() {
   const [bookId, setBookId] = useState('');
   const [book, setBook] = useState<SerializedBook | null>(null);
+  const [books, setBooks] = useState<SerializedBook[]>([]);
+
+  useEffect(() => {
+    serverFunctions
+      .getAllBooks({
+        first: 5,
+      })
+      .then((d) => {
+        console.warn(d);
+        setBooks(d);
+      });
+  }, []);
 
   return (
     <div className="App">
@@ -24,7 +38,13 @@ function App() {
       <div className="card">
         <button
           type="button"
-          onClick={() => serverFunctions.getAllBooks().then((d) => console.warn(d))}
+          onClick={() =>
+            serverFunctions
+              .getAllBooks({
+                first: 5,
+              })
+              .then((d) => console.warn(d))
+          }
         >
           getAllBooks
         </button>
@@ -40,6 +60,25 @@ function App() {
         <pre>{JSON.stringify(book)}</pre>
       </div>
       <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
+      <Virtuoso
+        style={{ height: 100 }}
+        data={books}
+        // eslint-disable-next-line react/no-unstable-nested-components
+        itemContent={(index, data) => <div key={data.id}>{JSON.stringify(data)}</div>}
+        endReached={() => {
+          const lastBook = books[books.length - 1];
+          console.warn('lastid', lastBook.id);
+          serverFunctions
+            .getAllBooks({
+              first: 5,
+              after: lastBook.id,
+            })
+            .then((d) => {
+              console.warn(d);
+              setBooks((prev) => [...prev, ...d]);
+            });
+        }}
+      />
     </div>
   );
 }
