@@ -2,9 +2,10 @@ export type Type = 'ID' | 'string' | 'number' | 'boolean' | 'date';
 
 export type Property = {
   key: string;
-  type: Type | Schema;
+  type: Type;
   required?: boolean;
   default?: any;
+  relatedTo?: Schema;
 };
 
 export type Schema = {
