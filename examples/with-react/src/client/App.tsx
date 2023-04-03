@@ -24,9 +24,9 @@ function App() {
       <div className="card">
         <button
           type="button"
-          onClick={() => serverFunctions.getSheetData().then((d) => console.warn(d))}
+          onClick={() => serverFunctions.getAllBooks().then((d) => console.warn(d))}
         >
-          getSheetData
+          getAllBooks
         </button>
       </div>
       <div className="card">
