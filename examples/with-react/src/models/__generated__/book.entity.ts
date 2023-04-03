@@ -1,13 +1,11 @@
 import { z } from 'zod';
 
-import { authorSchema } from '@/models/__generated__/author.entity';
-
 export const bookSchema = z.object({
   id: z.string(),
   title: z.string(),
   publishedAt: z.date().optional(),
   soldOut: z.boolean().optional(),
-  author: authorSchema,
+  authorId: z.string(),
 });
 
 export type IBook = z.infer<typeof bookSchema>;
@@ -25,7 +23,7 @@ export class Book {
       title: data[1],
       publishedAt: data[2],
       soldOut: data[3],
-      author: data[4],
+      authorId: data[4],
     });
   }
 
