@@ -1,0 +1,14 @@
+{
+  "name": "@gas-code-generator/cli",
+  "version": "0.1.0",
+  "main": "dist/gas-code-generator-cli.cjs.js",
+  "module": "dist/gas-code-generator-cli.esm.js",
+  "license": "MIT",
+  "files": [
+    "bin.js",
+    "dist/*"
+  ],
+  "bin": {
+    "gas-gen": "./bin.js"
+  }
+}

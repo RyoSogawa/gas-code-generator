@@ -10,7 +10,8 @@
     "build": "yarn build:client && yarn build:server",
     "preview": "cd src/client && vite preview",
     "push": "yarn build && cp appsscript.json dist && clasp push",
-    "deploy": "clasp deploy"
+    "deploy": "clasp deploy",
+    "codegen": "gas-gen test"
   },
   "dependencies": {
     "@google/clasp": "^2.4.2",
@@ -23,6 +24,7 @@
     "tsyringe": "^4.7.0"
   },
   "devDependencies": {
+    "@gas-code-generator/cli": "^0.1.0",
     "@gas-code-generator/utils": "^0.1.0",
     "@types/google-apps-script": "^1.0.58",
     "@types/react": "^18.0.27",
