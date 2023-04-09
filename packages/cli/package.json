@@ -19,5 +19,8 @@
   },
   "peerDependencies": {
     "zod": ">=3.3.0"
+  },
+  "dependencies": {
+    "jiti": "^1.18.2"
   }
 }

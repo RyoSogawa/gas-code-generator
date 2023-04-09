@@ -29,7 +29,7 @@ export type Property = z.infer<typeof propertySchema>;
 export const tableSchema = z.object({
   sheetName: z.string().optional(),
   headerRowNum: z.number().optional(),
-  properties: z.array(propertySchema),
+  properties: z.array(propertySchema).optional(), // HACK: required but zod returns error
 });
 
 export type Table = z.infer<typeof tableSchema>;
