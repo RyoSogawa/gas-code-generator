@@ -10,5 +10,15 @@
   ],
   "bin": {
     "gas-gen": "./bin.js"
+  },
+  "scripts": {
+    "dev": "tsx ./src/index.ts",
+    "dev:init": "yarn dev init"
+  },
+  "devDependencies": {
+    "tsx": "^3.12.6"
+  },
+  "peerDependencies": {
+    "zod": ">=3.3.0"
   }
 }

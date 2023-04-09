@@ -1,5 +1,7 @@
 import { runCli } from './runCli';
 
+export * from './types';
+
 // const [, , cmd] = process.argv;
 
 runCli()

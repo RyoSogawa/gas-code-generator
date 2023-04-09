@@ -1,6 +1,6 @@
-import type { Schema } from './type';
+import type { Table } from '@gas-code-generator/cli';
 
-export const Author: Schema = {
+export const Author: Table = {
   sheetName: 'Author',
   headerRowNum: 1,
   properties: [
