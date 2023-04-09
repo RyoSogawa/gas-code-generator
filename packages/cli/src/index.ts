@@ -1,8 +1,8 @@
 import { runCli } from './runCli';
 
-const [, , cmd] = process.argv;
+// const [, , cmd] = process.argv;
 
-runCli(cmd)
+runCli()
   .then(() => {
     process.exit(0);
   })
